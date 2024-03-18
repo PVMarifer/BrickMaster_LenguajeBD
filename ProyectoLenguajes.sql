@@ -1,117 +1,3 @@
--- Tabla Empresa
-CREATE TABLE Local (
-    Nombre VARCHAR2(40),
-    Direccion VARCHAR2(50),
-    Telefono VARCHAR2(10),
-    Correo VARCHAR2(20),
-    Productos_Venta VARCHAR2(50),
-    CONSTRAINT pk_local PRIMARY KEY (Nombre)
-);
-
-
-
--- Tabla Distribuidores
-CREATE TABLE Distribuidores (
-    ID_Distribuidor VARCHAR2(10),
-    Direccion VARCHAR2(50),
-    Telefono VARCHAR2(10),
-    Correo VARCHAR2(20),
-    Tiendas VARCHAR2(50),
-    CONSTRAINT pk_distribuidor PRIMARY KEY (ID_Distribuidor)
-);
-
--- Tabla Inventario
-CREATE TABLE Inventario (
-    ID_Set VARCHAR2(500),
-    nombre_Set VARCHAR2(500),
-    Precio NUMBER,
-    Descripcion VARCHAR2(500),
-    CONSTRAINT pk_inventario PRIMARY KEY (ID_Set)
-);
-
---------MODIFICACIONES A INVENTARIO:------------
-SELECT s.*, i.Precio, i.Descripcion
-FROM SetsJuego s
-INNER JOIN Inventario i ON s.ID_Set = i.ID_Producto;
------------------------------------------------------
-
--- Tabla Producto
-CREATE TABLE Producto (
-    ID_Producto VARCHAR2(10),
-    Nombre_Producto VARCHAR2(50),
-    Detalles_Juego VARCHAR2(100),
-    Precio NUMBER,
-    CONSTRAINT pk_producto PRIMARY KEY (ID_Producto)
-);
- ------------MODIFICACIONES-----------------------
-
-Alter TABLE Producto RENAME to SETS --Renombre de la tabla 
-ALTER TABLE SETS RENAME TO SetsJuego
--- Modificar el atributo nombre_Producto a nombre_Set en la tabla Set
-ALTER TABLE SetsJuego RENAME COLUMN nombre_Producto TO nombre_Set;
--- Modificar el atributo nombre_Producto a nombre_Set en la tabla Set
-ALTER TABLE SetsJuego RENAME COLUMN ID_Producto TO ID_Set;
-
-ALTER TABLE SetsJuego DROP COLUMN Rango_Edad;
-ALTER TABLE SetsJuego DROP COLUMN Cantidad;
-
-select * from SetsJuego;
----------------------------------------
-
-ALTER TABLE SetsJuego
-MODIFY ID_Set VARCHAR(100);
-
-ALTER TABLE SetsJuego
-MODIFY nombre_Set VARCHAR2(500);
-
-ALTER TABLE SetsJuego
-MODIFY Detalles_juego VARCHAR2(500);
-
-
--- Tabla Cliente
-
-CREATE TABLE Cliente (
-    ID_Cliente VARCHAR2(10),
-    Nombre VARCHAR2(50),
-    PrimerApellido VARCHAR2(50),
-    SegundoApellido VARCHAR2(50),
-    Direccion VARCHAR2(100),
-    Telefono VARCHAR2(100),
-    Correo VARCHAR2(100),
-    CONSTRAINT pk_cliente PRIMARY KEY (ID_Cliente)
-);
-
--- Tabla Encabezado_Factura
-CREATE TABLE Encabezado_Factura (
-    ID_Factura VARCHAR2(10),
-    ID_Cliente VARCHAR2(10),
-    ID_Producto VARCHAR2(10),
-    Total_Pago NUMBER,
-    FechaCompra DATE,
-    CONSTRAINT pk_encabezado_factura PRIMARY KEY (ID_Factura),
-    CONSTRAINT fk_encabezado_factura_cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente),
-    CONSTRAINT fk_encabezado_factura_producto FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
-);
-
--- Tabla Detalle_Factura
-CREATE TABLE Detalle_Factura (
-    ID_DetalleFactura VARCHAR2(10),
-    CantidadProducto NUMBER,
-    Descuento NUMBER,
-    Estado_Des VARCHAR2(10),
-    CONSTRAINT pk_detalle_factura PRIMARY KEY (ID_DetalleFactura)
-);
-
--- Tabla Entrega
-CREATE TABLE Entrega (
-    ID_Cliente VARCHAR2(10),
-    ID_Factura VARCHAR2(10),
-    Direccion_Entrega VARCHAR2(100),
-    CONSTRAINT fk_entrega_cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente),
-    CONSTRAINT fk_entrega_factura FOREIGN KEY (ID_Factura) REFERENCES Encabezado_Factura(ID_Factura)
-);
-
-
 
 
 ------------------------------------------------------------------------------------------------------
@@ -194,6 +80,36 @@ INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('4060
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('40601', 'Majisto’s Magical Workshop', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('10315', 'Tranquil Garden', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('71045', 'Lego Minifigures Series 25', '', 48000);
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+//PROCEDIMIENTOS Y PAQUETES
+---------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PACKAGE SetsJuego_Package AS 
+  PROCEDURE Obtener_Info_Set(
+    p_ID_Set IN VARCHAR2,
+    o_nombre_Set OUT VARCHAR2,
+    o_Precio OUT NUMBER,
+    o_Detalles_Juego OUT VARCHAR2
+  ); 
+END SetsJuego_Package;
+
+CREATE OR REPLACE PACKAGE BODY SetsJuego_Package AS
+  PROCEDURE Obtener_Info_Set(
+    p_ID_Set IN VARCHAR2,
+    o_nombre_Set OUT VARCHAR2,
+    o_Precio OUT NUMBER,
+    o_Detalles_Juego OUT VARCHAR2
+  ) AS
+  BEGIN
+    SELECT nombre_Set, Precio, Detalles_Juego
+    INTO o_nombre_Set, o_Precio, o_Detalles_Juego
+    FROM SetsJuego
+    WHERE ID_Set = p_ID_Set;
+  END Obtener_Info_Set;
+END SetsJuego_Package;
+
+--------------------------------------------------------------------------------------
 
 
 select * from setsjuego;
