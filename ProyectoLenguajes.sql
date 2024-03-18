@@ -28,6 +28,12 @@ CREATE TABLE Inventario (
     CONSTRAINT pk_inventario PRIMARY KEY (ID_Producto)
 );
 
+--------MODIFICACIONES A INVENTARIO:------------
+SELECT s.*, i.Cantidad, i.Precio, i.Descripcion
+FROM SetsJuego s
+INNER JOIN Inventario i ON s.ID_Set = i.ID_Producto;
+
+
 -- Tabla Producto
 CREATE TABLE Producto (
     ID_Producto VARCHAR2(10),
@@ -38,6 +44,15 @@ CREATE TABLE Producto (
     Cantidad NUMBER,
     CONSTRAINT pk_producto PRIMARY KEY (ID_Producto)
 );
+ ------------MODIFICACIONES-----------------------
+
+Alter TABLE Producto RENAME to SETS --Renombre de la tabla 
+ALTER TABLE SETS RENAME TO SetsJuego
+-- Modificar el atributo nombre_Producto a nombre_Set en la tabla Set
+ALTER TABLE SetsJuego RENAME COLUMN nombre_Producto TO nombre_Set;
+-- Modificar el atributo nombre_Producto a nombre_Set en la tabla Set
+ALTER TABLE SetsJuego RENAME COLUMN ID_Producto TO ID_Set;
+
 
 -- Tabla Cliente
 CREATE TABLE Cliente (
