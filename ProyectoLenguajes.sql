@@ -1,6 +1,3 @@
-
-
-------------------------------------------------------------------------------------------------------
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40681', 'Retro Food Truck', 25000, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75347', 'TIE Bomber™', 52000, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75346', 'Pirate Snub Fighter', 30000, 'Disponible');
@@ -85,6 +82,8 @@ INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('7104
 --------------------------------------------------------------------------------------------------------------------------------
 //PROCEDIMIENTOS Y PAQUETES
 ---------------------------------------------------------------------------------------------------------------------------------
+----------------Obtiene la información de un set basado en el ID
+
 CREATE OR REPLACE PACKAGE SetsJuego_Package AS 
   PROCEDURE Obtener_Info_Set(
     p_ID_Set IN VARCHAR2,
@@ -110,7 +109,73 @@ CREATE OR REPLACE PACKAGE BODY SetsJuego_Package AS
 END SetsJuego_Package;
 
 --------------------------------------------------------------------------------------
+---------------Devuelve información del Local basado en el ID
 
+CREATE OR REPLACE PACKAGE Empresa_Package AS 
+  PROCEDURE Obtener_Info_Local_Por_ID(
+    p_ID_Local IN VARCHAR2,
+    o_Direccion OUT VARCHAR2,
+    o_Telefono OUT VARCHAR2,
+    o_Correo OUT VARCHAR2,
+    o_Productos_Venta OUT VARCHAR2
+  ); 
+END Empresa_Package;
+/
+
+CREATE OR REPLACE PACKAGE BODY Empresa_Package AS
+  PROCEDURE Obtener_Info_Local_Por_ID(
+    p_ID_Local IN VARCHAR2,
+    o_Direccion OUT VARCHAR2,
+    o_Telefono OUT VARCHAR2,
+    o_Correo OUT VARCHAR2,
+    o_Productos_Venta OUT VARCHAR2
+  ) AS
+  BEGIN
+    SELECT Direccion, Telefono, Correo, Productos_Venta
+    INTO o_Direccion, o_Telefono, o_Correo, o_Productos_Venta
+    FROM Local
+    WHERE Nombre = p_ID_Local;
+  END Obtener_Info_Local_Por_ID;
+END Empresa_Package;
+
+-----------------------------------------------------------
+--Información de un cliente basado en su ID,
+
+CREATE OR REPLACE PACKAGE Cliente_Package AS 
+  PROCEDURE Obtener_Info_Cliente(
+    p_ID_Cliente IN VARCHAR2,
+    o_Nombre OUT VARCHAR2,
+    o_Direccion OUT VARCHAR2,
+    o_Telefono OUT VARCHAR2,
+    o_Correo OUT VARCHAR2
+  ); 
+END Cliente_Package;
+/
+
+CREATE OR REPLACE PACKAGE BODY Cliente_Package AS
+  PROCEDURE Obtener_Info_Cliente(
+    p_ID_Cliente IN VARCHAR2,
+    o_Nombre OUT VARCHAR2,
+    o_Direccion OUT VARCHAR2,
+    o_Telefono OUT VARCHAR2,
+    o_Correo OUT VARCHAR2
+  ) AS
+  BEGIN
+    SELECT Nombre, Direccion, Telefono, Correo
+    INTO o_Nombre, o_Direccion, o_Telefono, o_Correo
+    FROM Cliente
+    WHERE ID_Cliente = p_ID_Cliente;
+  END Obtener_Info_Cliente;
+END Cliente_Package;
+/
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------
 
 select * from setsjuego;
 select * from inventario;
