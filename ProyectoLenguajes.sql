@@ -120,7 +120,7 @@ CREATE OR REPLACE PACKAGE Empresa_Package AS
     o_Productos_Venta OUT VARCHAR2
   ); 
 END Empresa_Package;
-/
+
 
 CREATE OR REPLACE PACKAGE BODY Empresa_Package AS
   PROCEDURE Obtener_Info_Local_Por_ID(
@@ -150,7 +150,7 @@ CREATE OR REPLACE PACKAGE Cliente_Package AS
     o_Correo OUT VARCHAR2
   ); 
 END Cliente_Package;
-/
+
 
 CREATE OR REPLACE PACKAGE BODY Cliente_Package AS
   PROCEDURE Obtener_Info_Cliente(
@@ -167,12 +167,18 @@ CREATE OR REPLACE PACKAGE BODY Cliente_Package AS
     WHERE ID_Cliente = p_ID_Cliente;
   END Obtener_Info_Cliente;
 END Cliente_Package;
-/
 
 
+------------------------------------VISTAS------------------------------------------------------
+
+CREATE OR REPLACE VIEW Detalle_Local AS
+SELECT Nombre, Direccion, Telefono, Correo, Productos_Venta
+FROM Local;
 
 
-
+CREATE OR REPLACE VIEW Resumen_Inventario AS
+SELECT ID_Set, nombre_Set, Precio
+FROM Inventario;
 
 
 --------------------------------------------------------------------------------------------
