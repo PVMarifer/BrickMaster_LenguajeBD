@@ -6,8 +6,8 @@ CREATE TABLE Locales (
     Correo VARCHAR2(20),
     Productos_Venta VARCHAR2(50)
 );
-/*Modifiqué la tabla de locales porque no tenía un ID_Local y eso era lo que daba error en algunos procedimientos, el Primary Key
-había sido declarado por el nombre entonces en lugar de editar todos los procedimientos por nombre, cambie la tabla -Fernanda*/
+/*Modifiquï¿½ la tabla de locales porque no tenï¿½a un ID_Local y eso era lo que daba error en algunos procedimientos, el Primary Key
+habï¿½a sido declarado por el nombre entonces en lugar de editar todos los procedimientos por nombre, cambie la tabla -Fernanda*/
 
 CREATE TABLE Distribuidores (
     ID_Distribuidor VARCHAR2(10),
@@ -28,15 +28,15 @@ CONSTRAINT pk_inventario PRIMARY KEY (ID_Set));
 /*Cuando inserten estos datos, les va a pedir un valor para Robin, tienen que poner "Y Robin" porque se encuentre como "& Robin",
 entonces modifica el dato. Si no se modifica, da error. -Fernanda*/
 
-/*Cuando hagan los inserts habrá un error por constraints, esto es porque se está identificando un insert con mismo ID en 
+/*Cuando hagan los inserts habrï¿½ un error por constraints, esto es porque se estï¿½ identificando un insert con mismo ID en 
 alguno de los datos
 -Fernanda*/
 
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40681', 'Retro Food Truck', 25000, 'Vendido');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75347', 'TIE Bomber™', 52000, 'Disponible');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75347', 'TIE Bomberï¿½', 52000, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75346', 'Pirate Snub Fighter', 30000, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76281', 'X-Men X-Jet', 70000, 'Disponible');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5008082', 'Mini Skeleton Storage Head – Green', 8500, 'Disponible');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5008082', 'Mini Skeleton Storage Head ï¿½ Green', 8500, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('31135', 'Vintage Motorcycle', 13500, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76916', 'Porsche 963', 22000, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76914', 'Ferrari 812 Competizione', 22000, 'Vendido');
@@ -47,7 +47,7 @@ INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40603'
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40604', 'Christmas Decor', 0, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('6487474', 'Buildable Grey Castle', 0, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40602', 'Winter Market Stall', 0, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40601', 'Majisto’s Magical Workshop', 0, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40601', 'Majistoï¿½s Magical Workshop', 0, 'Sin Registro');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('10315', 'Tranquil Garden', 0, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('71045', 'Lego Minifigures Series 25', 4000, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('71045', 'Lego Minifigures Series 25', 48000, 'Vendido');
@@ -63,21 +63,21 @@ INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('31147'
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('31157', 'Exotic Peacock', 17000, 'Evento');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('31156', 'Tropical Ukulele', 27000, 'Disponible');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('21345', 'Polaroid OneStep SX-70 Camera', 68000, 'Disponible');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('71405', 'LEGO® Minifigures Series 25', 4000, 'Vendido');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('71405', 'LEGOï¿½ Minifigures Series 25', 4000, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('10328', 'Bouquet of Roses', 52000, 'Evento');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5006210', 'LEGO® Storage Head – Mini (Silly)', 8500, 'Disponible');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5006258', 'LEGO® Storage Head – Mini (Silly)', 8500, 'Disponible');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5006211', 'LEGO® Storage Head – Mini (Winking)', 8500, 'Disponible');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75375', 'Millennium Falcon™', 70000, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75376', 'Tantive IV™', 63000, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75377', 'Invisible Hand™', 43000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5006210', 'LEGOï¿½ Storage Head ï¿½ Mini (Silly)', 8500, 'Disponible');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5006258', 'LEGOï¿½ Storage Head ï¿½ Mini (Silly)', 8500, 'Disponible');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('5006211', 'LEGOï¿½ Storage Head ï¿½ Mini (Winking)', 8500, 'Disponible');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75375', 'Millennium Falconï¿½', 70000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75376', 'Tantive IVï¿½', 63000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75377', 'Invisible Handï¿½', 43000, 'Sin Registro');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('31154', 'Forest Animals: Red Fox', 43000, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76429', 'Talking Sorting Hat™', 80000, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40677', 'Prisoner of Azkaban™ Figures', 42000, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76430', 'Hogwarts™ Castle Owlery', 38000, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('854236', 'Darth Vader™ Keyring', 6500, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76429', 'Talking Sorting Hatï¿½', 80000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40677', 'Prisoner of Azkabanï¿½ Figures', 42000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('76430', 'Hogwartsï¿½ Castle Owlery', 38000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('854236', 'Darth Vaderï¿½ Keyring', 6500, 'Sin Registro');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('40680', 'Flower Store', 0, 'Sin Registro');
-INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75379', 'R2-D2™', 80000, 'Sin Registro');
+INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('75379', 'R2-D2ï¿½', 80000, 'Sin Registro');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('NoID1', 'Poison Ivy - DC Multiverse Movie Batman & Robin 7 Figure BAF Mr. Freeze', 30000, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('NoID2', 'Batgirl - DC Multiverse Movie Batman y Robin 7 Figure BAF Mr. Freeze', 30000, 'Vendido');
 INSERT INTO Inventario (ID_Set, nombre_Set, Precio, Descripcion) VALUES ('NoID3', 'Batman - DC Multiverse Movie Batman & Robin 7 Figure BAF Mr. Freeze', 30000, 'Vendido');
@@ -107,17 +107,17 @@ INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('3114
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('31157', 'Exotic Peacock', '', 17000);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('31156', 'Tropical Ukulele', '', 27000);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('21345', 'Polaroid OneStep SX-70 Camera', '', 68000);
-INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('71405', 'LEGO® Minifigures Series 25', '', 4000);
+INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('71405', 'LEGOï¿½ Minifigures Series 25', '', 4000);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('10328', 'Bouquet of Roses', '', 52000);
-INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('5006210', 'LEGO® Storage Head – Mini (Silly)', '', 8500);
-INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('5006258', 'LEGO® Storage Head – Mini (Silly)', '', 8500);
-INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('5006211', 'LEGO® Storage Head – Mini (Winking)', '', 8500);
+INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('5006210', 'LEGOï¿½ Storage Head ï¿½ Mini (Silly)', '', 8500);
+INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('5006258', 'LEGOï¿½ Storage Head ï¿½ Mini (Silly)', '', 8500);
+INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('5006211', 'LEGOï¿½ Storage Head ï¿½ Mini (Winking)', '', 8500);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('10329', 'Tiny Plants', '', 43000);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('40603', 'Wintertime Carriage Ride', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('40604', 'Christmas Decor', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('6487474', 'Buildable Grey Castle', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('40602', 'Winter Market Stall', '', 0);
-INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('40601', 'Majisto’s Magical Workshop', '', 0);
+INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('40601', 'Majistoï¿½s Magical Workshop', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('10315', 'Tranquil Garden', '', 0);
 INSERT INTO SetsJuego (ID_Set, nombre_Set, Detalles_Juego, Precio) VALUES ('71045', 'Lego Minifigures Series 25', '', 48000);
 
@@ -167,8 +167,8 @@ CREATE TABLE Entrega (
  CREATE TABLE ROLE_S(
     ID_ROL INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     ROL VARCHAR2(50)
-    CONSTRAINT rol_unico UNIQUE (ID_ROL) /*Le agregué un constraint porque a la hora de querer insertar los datos, 
-    deja que hayan más administradores, clientes o cajeros pero como no hay nada que lo diferencie, pues se ven todos repetidos. -Fernanda
+    CONSTRAINT rol_unico UNIQUE (ID_ROL) /*Le agreguï¿½ un constraint porque a la hora de querer insertar los datos, 
+    deja que hayan mï¿½s administradores, clientes o cajeros pero como no hay nada que lo diferencie, pues se ven todos repetidos. -Fernanda
     */
 );
 
@@ -208,8 +208,8 @@ BEGIN
 END;
 
 ------------------VER ROL AC---------------------
-/*No entiendo cuál es la diferencia entre Rol AC y Rol normal, Este muestra solo un rol específico basado en el ID_ROL? -Fernanda
-Consideraría Eliminar el de Ver Rol normal y dejarlo solo por ID*/
+/*No entiendo cuï¿½l es la diferencia entre Rol AC y Rol normal, Este muestra solo un rol especï¿½fico basado en el ID_ROL? -Fernanda
+Considerarï¿½a Eliminar el de Ver Rol normal y dejarlo solo por ID*/
 
 CREATE OR REPLACE PROCEDURE VER_ROLAC (TRAER INT) AS 
     VISTA_ROLAC SYS_REFCURSOR;
@@ -244,18 +244,18 @@ END;
  
 
 CREATE OR REPLACE PACKAGE Cliente_Package AS --Crea el Paquete
-  PROCEDURE Obtener_Info_Cliente( --Toma los parámetros de la tabla Cliente
+  PROCEDURE Obtener_Info_Cliente( --Toma los parï¿½metros de la tabla Cliente
     p_ID_Cliente IN VARCHAR2,
     o_Nombre OUT VARCHAR2,
     o_Direccion OUT VARCHAR2,
     o_Telefono OUT VARCHAR2,
     o_Correo OUT VARCHAR2
   ); 
-END Cliente_Package; --Cierra la especificación del paquete
+END Cliente_Package; --Cierra la especificaciï¿½n del paquete
 /
 
 CREATE OR REPLACE PACKAGE BODY Cliente_Package AS --Crea el cuerpo del paquete, su "Relleno" pues
-  PROCEDURE Obtener_Info_Cliente( --Define la implementación del procedimiento Obtener_Info_Cliente, básicamente dice "Este procedimiento hará:..."
+  PROCEDURE Obtener_Info_Cliente( --Define la implementaciï¿½n del procedimiento Obtener_Info_Cliente, bï¿½sicamente dice "Este procedimiento harï¿½:..."
     p_ID_Cliente IN VARCHAR2,
     o_Nombre OUT VARCHAR2,
     o_Direccion OUT VARCHAR2,
@@ -270,7 +270,7 @@ CREATE OR REPLACE PACKAGE BODY Cliente_Package AS --Crea el cuerpo del paquete, 
   END Obtener_Info_Cliente; --Cierra el procedimiento
 END Cliente_Package; --Cierra el paquete
 
-/ --Esto lo vi en varios videos, básicamente era como una forma o práctica de código para cerrar los procedimientos o variables PLSQL -Fernanda
+/ --Esto lo vi en varios videos, bï¿½sicamente era como una forma o prï¿½ctica de cï¿½digo para cerrar los procedimientos o variables PLSQL -Fernanda
 -------SETS JUEGO PACKAGE -----------------------------
 CREATE OR REPLACE PACKAGE SetsJuego_Package AS 
   PROCEDURE Obtener_Info_Set(
@@ -299,8 +299,8 @@ END SetsJuego_Package;
 /
 _-------------EMPRESA PACKAGE--------------
 
-/*Sería bueno que revisen este porque a mí el error que me da es básicamente que no se encuentra o no se conecta con los datos 
-de usuario que había creado para el proyecto pero el procedimiento sería el mismo que el de los otros dos por lo que debería estar correcto.
+/*Serï¿½a bueno que revisen este porque a mï¿½ el error que me da es bï¿½sicamente que no se encuentra o no se conecta con los datos 
+de usuario que habï¿½a creado para el proyecto pero el procedimiento serï¿½a el mismo que el de los otros dos por lo que deberï¿½a estar correcto.
 -Fernanda*/
 
 CREATE OR REPLACE PACKAGE EMPRESA_PACKAGE AS 
@@ -335,8 +335,8 @@ END EMPRESA_PACKAGE;
 
 -----INSERTAR PRODUCTO---------
 
-/*Este me decía que tenía muchos datos o se insertaban muchos datos. Revisando en las tablas, en SetsJuego no existe el de "Cantidad" 
-y me pasó con muchos de los procedimientos que siguen entonces solo quité ese atributo y ya funcionaron bien. -Fernanda*/
+/*Este me decï¿½a que tenï¿½a muchos datos o se insertaban muchos datos. Revisando en las tablas, en SetsJuego no existe el de "Cantidad" 
+y me pasï¿½ con muchos de los procedimientos que siguen entonces solo quitï¿½ ese atributo y ya funcionaron bien. -Fernanda*/
 SET SERVEROUTPUT ON;
 CREATE OR REPLACE PROCEDURE insertar_producto (
     p_nombre_producto   VARCHAR2,
@@ -367,7 +367,7 @@ END;
 CREATE SEQUENCE seq_producto;
 
 ----------VER PRODUCTOS POR ID-------------
-/*Eliminé el otro Ver Productos porque lo sentía repetitivo, lo dejé solo 
+/*Eliminï¿½ el otro Ver Productos porque lo sentï¿½a repetitivo, lo dejï¿½ solo 
 por ID ya que este es la llave primaria. Este trae los datos de la tabla SetsJuego por su ID -Fernanda*/
  
 CREATE OR REPLACE PROCEDURE ver_producto_por_id (
@@ -505,7 +505,7 @@ END;
 
 ----------------------ACTUALIZAR INVENTARIO----------------------------------------------
 
-/*En este no quité cantidad porque la variable fue seteada con descripción entonces no hay problema con este. -Fernanda */
+/*En este no quitï¿½ cantidad porque la variable fue seteada con descripciï¿½n entonces no hay problema con este. -Fernanda */
 CREATE OR REPLACE PROCEDURE ACTUALIZAR_INVENTARIO (
     p_ID_Set      VARCHAR2,
     p_cantidad    NUMBER
@@ -630,6 +630,7 @@ END;
  
 
 --------------------------------ACTUALIZAR FACTURA-------------------------------------------
+
 CREATE OR REPLACE PROCEDURE actualizar_factura (
     p_id_factura          VARCHAR2,
     p_total_pago          NUMBER,
@@ -657,24 +658,69 @@ EXCEPTION
         RAISE;
 END;
 
+-----------------------------------------MOSTRAR TODOS LOS CLIENTES--------------------------------------------
+CREATE OR REPLACE PROCEDURE mostrar_todos_clientes (mostrar_actuales IN BOOLEAN DEFAULT FALSE) IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Los clientes en la base de datos son:');
+    
+    IF mostrar_actuales THEN
+        FOR cliente IN (SELECT * FROM Cliente) LOOP
+            DBMS_OUTPUT.PUT_LINE('ID: ' || cliente.id_cliente || ', Nombre: ' || cliente.nombre);
+        END LOOP;
+    END IF;
+END;
+/
+-----------------------------------------
+-----------------------------------------
+-----------------------------------------
+ ---------------TRIGGERS----------------
 
- 
+--------------------TRIGGER PARA MOSTRAR LOS CLIENTES------------------------
+
+/*Le agreguÃ© una variable mÃ¡s ya que solo se mostrarÃ­a el nombre del cliente y puede haber mÃ¡s de un cliente con el mismo nombre, por eso mejor identificarlos con ID tambiÃ©n -Fernanda */
+
+CREATE OR REPLACE TRIGGER mostrar_clientes
+AFTER INSERT ON Cliente
+FOR EACH ROW
+BEGIN
+    -- Mostrar los datos del nuevo cliente insertado
+    DBMS_OUTPUT.PUT_LINE('Nuevo cliente insertado:');
+    DBMS_OUTPUT.PUT_LINE('ID: ' || :NEW.id_cliente || ', Nombre: ' || :NEW.nombre);
+    
+    -- Llamar al procedimiento para mostrar todos los clientes, incluyendo el nuevo cliente ***Da problema... -Fernanda
+    mostrar_todos_clientes;
+END;
+/
+
+
+
+--------------------TRIGGER PARA MOSTRAR LA INFORMACIÃ“N DEL PRODUCTO--------------------------------
+/*A este tambiÃ©n le agreguÃ© que se imprima el ID del Set del juego por lo mismo, para poder identificarlo -Fernanda*/
+CREATE OR REPLACE TRIGGER Mostrar_InformaciÃ³n_de_Producto
+AFTER INSERT ON SetsJuego
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('ID_SET: ' || :NEW.ID_SET);
+    DBMS_OUTPUT.PUT_LINE('nombre_Set: ' || :NEW.nombre_Set);
+    DBMS_OUTPUT.PUT_LINE('Detalles_Juego: ' || :NEW.Detalles_Juego);
+    
+END;
 
 /*Llamado a los prodedimientos*/
 
 /*Este no lo pude arreglar porque es basado en los datos de SetsJuego para verlos pero los ID del CLI001 por ejemplo, son erroneos por lo 
-que deberían de abrir las tablas de Sets juego con el comando SELECT * FROM SETSJUEGO y buscar los datos ya escritos, también los de las 
-vistas de Ver_facturas, Eliminar_factura y esos. Hay que agregarle los datos a esos procedimientos. Ya están arreglados 
-y eliminé algunos que consideré redundantes. -Fernanda */
+que deberï¿½an de abrir las tablas de Sets juego con el comando SELECT * FROM SETSJUEGO y buscar los datos ya escritos, tambiï¿½n los de las 
+vistas de Ver_facturas, Eliminar_factura y esos. Hay que agregarle los datos a esos procedimientos. Ya estï¿½n arreglados 
+y eliminï¿½ algunos que considerï¿½ redundantes. -Fernanda */
 
  SELECT * FROM SETSJUEGO
 DECLARE
     vista_factura SYS_REFCURSOR;
 BEGIN
-    insertar_factura(100, 15, 115, '76995', 'CLI001', 'PROD001', 115, SYSDATE, 'Dirección de entrega');
+    insertar_factura(100, 15, 115, '76995', 'CLI001', 'PROD001', 115, SYSDATE, 'Direcciï¿½n de entrega');
  
     ver_facturas(vista_factura);
     eliminar_factura('76995');
-    actualizar_factura('76995', 120, SYSDATE, 'Nueva dirección de entrega');
+    actualizar_factura('76995', 120, SYSDATE, 'Nueva direcciï¿½n de entrega');
 END;
 
